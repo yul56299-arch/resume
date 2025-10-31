@@ -3,68 +3,113 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>我的履歷</title>
+  <title>林毓昌｜履歷</title>
+  <meta name="description" content="林毓昌｜亞洲大學財務金融學系｜目標金融業｜履歷與作品"/>
   <style>
-    body {font-family: 'Noto Sans TC', sans-serif; background: #f5f6fa; color: #333; margin: 0; padding: 0;}
-    .container {max-width: 800px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 30px;}
-    h1 {color: #0b7285; margin-bottom: 5px;}
-    h2 {border-left: 5px solid #0b7285; padding-left: 10px; color: #0b7285; margin-top: 30px;}
-    p, li {line-height: 1.6;}
-    ul {padding-left: 20px;}
-    .info {display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; color: #555;}
-    .info div {margin: 5px 0;}
-    .skills span {display: inline-block; background: #e3f2fd; color: #0b7285; padding: 5px 10px; border-radius: 6px; margin: 4px 4px 0 0; font-size: 14px;}
-    footer {text-align: center; color: #777; margin-top: 40px; font-size: 14px;}
+    :root{
+      --bg:#f6f7fb;--card:#ffffff;--ink:#0f172a;--muted:#64748b;--accent:#0ea5a5;--accent-ink:#064e4e;--chip:#e6fffb;--border:#e5eaf1
+    }
+    @media (prefers-color-scheme: dark){
+      :root{--bg:#0b1220;--card:#0f1629;--ink:#e7eefc;--muted:#9fb0c9;--accent:#2dd4bf;--accent-ink:#0ea5a5;--chip:#0b3b38;--border:#1c2640}
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans TC','PingFang TC',"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:40px auto;padding:0 18px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:0 12px 28px rgba(2,6,23,.06);overflow:hidden}
+    .hero{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;padding:28px}
+    .avatar{width:150px;height:150px;border-radius:20px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.16)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .title h1{margin:0 0 6px;font-size:28px;letter-spacing:.5px}
+    .subtitle{margin:0 0 8px;color:var(--muted)}
+    .chips{margin:8px 0 0}
+    .chip{display:inline-block;background:var(--chip);color:var(--accent-ink);border:1px solid rgba(13,148,136,.18);padding:6px 10px;border-radius:999px;font-size:13px;margin:0 8px 8px 0}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{appearance:none;border:1px solid var(--border);background:#ecfeff;color:#0b7285;padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer;transition:transform .06s ease, box-shadow .2s}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(2,132,199,.15)}
+    .btn.primary{background:var(--accent);color:white;border-color:transparent}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:22px;padding:0 28px 24px}
+    section{background:transparent;border-radius:14px}
+    section h2{font-size:18px;margin:18px 0 10px;color:var(--accent-ink)}
+    .muted{color:var(--muted)}
+    .block{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0;line-height:1.7}
+    .skill-row{display:flex;justify-content:space-between;align-items:center;margin:10px 0}
+    .bar{height:8px;background:#e8eef6;border-radius:999px;overflow:hidden;flex:1;margin-left:12px;border:1px solid var(--border)}
+    .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa);width:70%}
+    .footer{padding:14px 28px;border-top:1px dashed var(--border);color:var(--muted);font-size:13px}
+    @media (max-width:860px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr; text-align:center}.actions{justify-content:center}}
+    @media print{.wrap{margin:0;padding:0}.card{box-shadow:none;border:0}.btn{display:none}.footer{border:0}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>林立恩</h1>
-    <div class="info">
-      <div>📚 財務金融系 大四學生</div>
-      <div>📧 lin.example@mail.com | 📱 0912-345-678</div>
-      <div>學號：AU111035064</div>
+  <div class="wrap">
+    <div class="card">
+      <div class="hero">
+        <div class="avatar"><img src="profile.jpg" alt="林毓昌的照片"></div>
+        <div class="title">
+          <h1>林毓昌</h1>
+          <p class="subtitle">亞洲大學 財務金融學系｜學號 111035064｜目標：進入金融業</p>
+          <div class="chips">
+            <span class="chip">財務分析</span>
+            <span class="chip">Excel</span>
+            <span class="chip">PowerPoint</span>
+            <span class="chip">Python (pandas)</span>
+            <span class="chip">團隊協作</span>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="mailto:yul56299@gmail.com">📧 Email 聯絡</a>
+            <a class="btn" href="https://github.com/yul56299-arch" target="_blank" rel="noopener">🧰 GitHub</a>
+            <button class="btn" onclick="window.print()">⬇️ 下載 PDF</button>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <main>
+          <section class="block">
+            <h2>關於我</h2>
+            <p class="muted">我是財金系大四生，具備餐廳內場的實務歷練，培養出流程管理與時間控管能力。熟悉 Excel 報表處理與 Python 的基礎數據分析，能將數據轉為決策依據，期望在金融業持續精進。</p>
+          </section>
+          <section class="block">
+            <h2>工作 / 實務經驗</h2>
+            <ul class="list">
+              <li><strong>餐廳內場人員</strong>（兼職）－ 依單出餐、備料與場域清潔，維持穩定出餐效率與品質。</li>
+            </ul>
+          </section>
+          <section class="block">
+            <h2>專案 / 作業（示例，可持續補充）</h2>
+            <ul class="list">
+              <li><strong>股票估值分析</strong>：以 Excel/ Python 計算財務比率並視覺化，撰寫簡報提出觀察。</li>
+            </ul>
+          </section>
+        </main>
+        <aside>
+          <section class="block">
+            <h2>基本資料</h2>
+            <ul class="list">
+              <li>📍 台中</li>
+              <li>✉️ <a href="mailto:yul56299@gmail.com">yul56299@gmail.com</a></li>
+              <li>🎯 職涯目標：進入金融業</li>
+              <li>🧭 興趣：旅行、聽音樂</li>
+            </ul>
+          </section>
+          <section class="block">
+            <h2>學歷</h2>
+            <p><strong>亞洲大學 財務金融學系</strong>（在學）</p>
+          </section>
+          <section class="block">
+            <h2>技能</h2>
+            <div class="skill-row"><span>Excel（樞紐/函數）</span><div class="bar"><span style="width:80%"></span></div></div>
+            <div class="skill-row"><span>PowerPoint（簡報/視覺）</span><div class="bar"><span style="width:75%"></span></div></div>
+            <div class="skill-row"><span>Python（pandas）</span><div class="bar"><span style="width:55%"></span></div></div>
+            <div class="skill-row"><span>財務分析</span><div class="bar"><span style="width:65%"></span></div></div>
+          </section>
+        </aside>
+      </div>
+      <div class="footer">© 2025 林毓昌 · 本頁可列印下載作 PDF（按上方「下載 PDF」）</div>
     </div>
-
-    <h2>自我介紹</h2>
-    <p>我是財金系學生，擅長分析財報、投資策略與市場趨勢。熟悉 Excel、PowerPoint 與 Python 資料分析，能結合數據做出財務決策建議。</p>
-
-    <h2>學歷</h2>
-    <p><strong>國立範例大學 財務金融學系</strong>（2019－2023 預計）</p>
-
-    <h2>實習經驗</h2>
-    <ul>
-      <li><strong>範例投顧股份有限公司 實習生（2022/07－2022/09）</strong><br>協助主管進行財報整理與投資組合績效分析，運用 Excel 進行財務比率與趨勢圖表視覺化。</li>
-      <li><strong>校內投資理財社 社長（2021）</strong><br>帶領團隊舉辦理財講座與模擬投資競賽，推廣金融素養。</li>
-    </ul>
-
-    <h2>專案與作品</h2>
-    <ul>
-      <li><strong>股票估值分析專案：</strong>使用 Python 擷取台股資料、計算財務指標並撰寫報告。</li>
-      <li><strong>財報視覺化研究：</strong>以 Excel Power Query 整合不同公司財報，提升比較效率。</li>
-    </ul>
-
-    <h2>技能</h2>
-    <div class="skills">
-      <span>Excel</span>
-      <span>PowerPoint</span>
-      <span>Python (pandas)</span>
-      <span>財務分析</span>
-      <span>會計知識</span>
-      <span>資料整理</span>
-    </div>
-
-    <h2>語言能力</h2>
-    <ul>
-      <li>中文：母語</li>
-      <li>英文：TOEIC 700（中等）</li>
-    </ul>
-
-    <footer>
-      © 2025 Lin Lien. All rights reserved.
-    </footer>
   </div>
 </body>
 </html>
-
-
